@@ -44,7 +44,7 @@ SUSPICIOUS_FILES = [
 
 def scan_files(paths):
     for f in paths:
-        sys.stdout.write('.')
+        sys.stderr.write('.')
         if os.path.exists(f):
             yield f
     print
@@ -99,7 +99,7 @@ def find_apps():
 
 def scan_app():
     for root in find_apps():
-        sys.stdout.write('.')
+        sys.stderr.write('.')
         if is_app_infected(root):
             yield root
     print
